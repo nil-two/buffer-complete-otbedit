@@ -10,7 +10,7 @@ Usage
 
 int main() {
 	printf("hello\n");
-	|
+	p|
 }
 ```
 (Cursor is in |)
