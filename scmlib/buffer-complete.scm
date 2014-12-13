@@ -55,12 +55,10 @@
   (define complete-list '())
   (define target-word "")
 
-  (define (start-watching-complete-stop)
-    (app-set-event-handler
-      "on-cursor-moved"
-      (lambda ()
-        (set! complete-now #f)
-        (app-clear-event-handler "on-cursor-moved"))))
+  (app-set-event-handler
+    "on-cursor-moved"
+    (lambda ()
+      (set! complete-now #f)))
 
   (app-set-key
     "Ctrl+SPACE"
@@ -71,7 +69,6 @@
          (set! target-word (current-word))
          (set! complete-list (get-possible-completion-list (current-word)))))
       (delete-current-word)
-      (start-watching-complete-stop)
       (cond
         ((null? complete-list)
          (editor-paste-string target-word)
