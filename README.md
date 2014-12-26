@@ -17,7 +17,7 @@ int main() {
 
 2. hit Ctrl+Space
 
-3. buffer will will next
+3. buffer will next
 ```c
 #include <stdio.h>
 
