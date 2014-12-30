@@ -6,7 +6,7 @@
     (substring (current-line) 0 (editor-get-cur-col)))
 
   (define (last-word str)
-    (let ((m (rxmatch-substring (rxmatch #/\w+$/ str))))
+    (let ((m (rxmatch-substring (rxmatch #/[\w!?-]+$/ str))))
       (if (string? m) m "")))
 
   (define (current-word)
@@ -20,7 +20,7 @@
     (let ((hash (make-hash-table 'string=?))
           (words '()))
       (regexp-replace-all
-        #/\w+/
+        #/[\w!?-]+/
         str
         (lambda (m)
           (hash-table-put! hash (rxmatch-substring m) #t)))
