@@ -49,7 +49,7 @@ Write in `otbedit.scm` in `scmlib directory`.
 ```scm
 (define buffer-completion-key <key>)
 ```
-(<key> is the key you desire, like "Ctrl+n", "Alt+/")
+(`<key>` is the key you desire, like "Ctrl+n", "Alt+/")
 
 License
 ====================
