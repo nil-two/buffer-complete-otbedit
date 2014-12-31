@@ -1,6 +1,6 @@
-buffer-complete-otbedit
+buffer-complete-OTBEdit
 =======================
-buffer-complete-otbedit is a macro for [OTBEdit](http://www.hi-ho.ne.jp/a_ogawa/otbedit/).
+buffer-complete-OTBEdit is a macro for [OTBEdit](http://www.hi-ho.ne.jp/a_ogawa/otbedit/).
 This macro provides completion of using buffer.
 
 Usage
@@ -44,7 +44,7 @@ Installation
 
 Customize
 ====================
-##Change completion key
+###Change completion key
 Write in `otbedit.scm` in `scmlib directory`.
 ```scm
 (define buffer-completion-key <key>)
