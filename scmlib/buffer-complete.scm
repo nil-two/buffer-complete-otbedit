@@ -60,6 +60,22 @@
     (lambda ()
       (set! complete-now #f)))
 
+  (define (buffer-complete)
+    (app-status-bar-msg "")
+    (cond
+      ((not complete-now)
+       (set! target-word (current-word))
+       (set! complete-list (get-possible-completion-list (current-word)))))
+    (delete-current-word)
+    (cond
+      ((null? complete-list)
+       (editor-paste-string target-word)
+       (set! complete-now #f))
+      (else
+        (editor-paste-string (car complete-list))
+        (set! complete-list (cdr complete-list))
+        (set! complete-now #t))))
+
   (define buffer-complete-key
     (if (symbol-bound? 'buffer-complete-key)
       buffer-complete-key
@@ -67,20 +83,6 @@
 
   (app-set-key
     buffer-complete-key
-    (lambda ()
-      (app-status-bar-msg "")
-      (cond
-        ((not complete-now)
-         (set! target-word (current-word))
-         (set! complete-list (get-possible-completion-list (current-word)))))
-      (delete-current-word)
-      (cond
-        ((null? complete-list)
-         (editor-paste-string target-word)
-         (set! complete-now #f))
-        (else
-          (editor-paste-string (car complete-list))
-          (set! complete-list (cdr complete-list))
-          (set! complete-now #t))))))
+    buffer-complete))
 
 (load-wara-buffer-complete)
