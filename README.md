@@ -47,7 +47,7 @@ Customize
 ###Change completion key
 Write in `otbedit.scm` in `scmlib directory`.
 ```scm
-(define buffer-completion-key <key>)
+(define buffer-complete-key <key>)
 ```
 (`<key>` is the key you desire, like "Ctrl+n", "Alt+/")
 

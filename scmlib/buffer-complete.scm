@@ -60,14 +60,13 @@
     (lambda ()
       (set! complete-now #f)))
 
-  (define default-buffer-completion-key "Ctrl+SPACE")
-  (define buffer-completion-key
-    (if (symbol-bound? 'buffer-completion-key)
-       buffer-completion-key
-       default-buffer-completion-key))
+  (define buffer-complete-key
+    (if (symbol-bound? 'buffer-complete-key)
+      buffer-complete-key
+      "Ctrl+SPACE"))
 
   (app-set-key
-    buffer-completion-key
+    buffer-complete-key
     (lambda ()
       (app-status-bar-msg "")
       (cond
