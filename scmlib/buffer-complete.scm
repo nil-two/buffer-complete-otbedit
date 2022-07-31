@@ -1,4 +1,4 @@
-(define (load-kusabashira-buffer-complete)
+(define (load-nil2-buffer-complete)
   (define (current-line)
     (editor-get-row-string (editor-get-cur-row)))
 
@@ -85,4 +85,4 @@
     buffer-complete-key
     buffer-complete))
 
-(load-kusabashira-buffer-complete)
+(load-nil2-buffer-complete)
