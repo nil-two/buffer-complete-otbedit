@@ -38,7 +38,7 @@ int main() {
 Installation
 ------------
 
-1. download `autoclose-otbedit.zip` from the [releases page](https://github.com/nil2nekoni/buffer-complete-otbedit/releases)
+1. download `autoclose-otbedit.zip` from the [releases page](https://github.com/nil-two/buffer-complete-otbedit/releases)
 
 2. Unpack the zip file, and put all in your `OTBEdit directory`.
 
